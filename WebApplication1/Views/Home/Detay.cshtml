@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebApplication1.Models.Personel>
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detay</title>
+</head>
+<body>
+    <div> 
+        <h1>Detay Sayfası</h1>
+        
+        @foreach (var per in Model)
+        {
+            @per.PerID  @per.PerAd @per.Maas @per.Adres
+        }
+    </div>
+</body>
+</html>

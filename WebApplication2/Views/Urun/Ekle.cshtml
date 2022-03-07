@@ -1,0 +1,15 @@
+﻿@model WebApplication2.Models.Urun
+@{
+    ViewBag.Title = "Ekle";
+}
+
+<h2>Ürün Ekle</h2>
+
+@using(Html.BeginForm("Ekle","Urun",FormMethod.Post))
+{
+    @Html.TextBoxFor(m=>m.UrunAdi)
+    @Html.TextBoxFor(m=>m.KategoriID)
+    @Html.TextBoxFor(m=>m.Fiyat)
+    
+}
+

@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.Personel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Form</h2>
+
+<!--Sayfa yükleniyorsa get -->
+@*<form action="/Urun/Index" method="post">
+        <input type="text"  name="id" value="" />
+        <input type="text" name="ad" value="" />
+        <input type="submit" value="Gönder" />
+    </form>*@
+
+
+@*<form action="/Urun/VeriAl" method="get">
+        <input type="text" name="id" value="" />
+        <input type="text" name="ad" value="" />
+        <input type="submit" value="Gönder" />
+    </form>*@
+
+@*<form action="/Urun/IndexIki" method="post">
+        <input type="text" name="id" value="" />
+        <input type="text" name="ad" value="" />
+        <input type="submit" value="Gönder" />
+    </form>*@
+
+@*<form action="/Urun/IndexUc" method="post">
+        <input type="text" name="id" value="" />
+        <input type="text" name="ad" value="" />
+        <input type="submit" value="Gönder" />
+    </form>*@
+
+@*@{Html.BeginForm("IndexDort", "Urun", FormMethod.Post);
+        @Html.TextBox("id", "1")
+        @Html.TextBox("ad", "abc")
+        Html.EndForm();
+    }*@
+
+@*@using (Html.BeginForm("IndexDort", "Urun", FormMethod.Post)) //using yazdığımız için kapatmamıza gerek yok.
+    {
+       @Html.TextBox("id", "1")
+       @Html.TextBox("ad", "abc")
+       <input type="submit" name="name" value="Gönder" /> //html helper içinde submit butonu yok.
+    }*@
+
+
+@using (Html.BeginForm("IndexBes", "Urun", FormMethod.Post))
+    {
+       @Html.TextBoxFor(m=>m.PerID)
+       @Html.TextBoxFor(m=>m.PerAd)
+       <input type="submit" name="name" value="Gönder" />
+    }

@@ -1,0 +1,48 @@
+﻿@using WebApplication1.Models
+@model WebApplication1.Models.Personel
+@{
+    // Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Index Aksiyonu</h1>
+        @ViewData["id"] @ViewData["ad"]
+        <br />
+        @ViewBag.No @ViewBag.Isim
+        <br />
+        @{
+            @(((Personel)ViewData["Personel"]).PerID)
+        }<!--objeden sürekli cast yapmamız gerekir-->
+
+        <br />
+        @ViewBag.Pers.PerID<!--cast etmeye gerek yok-->
+
+        <br /><br />
+
+        @foreach (Personel p in (IEnumerable<Personel>)ViewData["Personeller"])
+        {@p.PerID @p.PerAd @p.Maas}
+
+        @foreach (Personel p in ViewBag.Perliste)
+        {@p.PerID @p.PerAd @p.Maas}
+
+
+        <br /><br />
+
+        @TempData["data"]
+
+        <br /><br />
+
+        <!--Model Kullanımı-->
+
+        @Model.PerID @Model.PerAd @Model.Maas @Model.Adres 
+    </div>
+</body>
+</html>

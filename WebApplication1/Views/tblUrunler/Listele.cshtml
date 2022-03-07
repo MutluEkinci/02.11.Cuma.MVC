@@ -1,0 +1,23 @@
+﻿@model  IEnumerable<WebApplication1.Models.tblUrunler>
+@{
+    ViewBag.Title = "Listele";
+}
+
+
+<h2>Urun Ekle</h2>
+@Html.ActionLink("Urun Ekle","VeriAl")
+
+<h2>Listele</h2>
+
+<table>
+    @foreach (var urun in Model)
+    {
+        <tr>
+            <td>@urun.UrunID</td>
+            <td>@urun.UrunAdi</td>
+            <td>@urun.Fiyat</td>
+            <td>@Html.ActionLink("Sec", "Sec", null, new { onClick = "return confirm('','')" })</td>
+        </tr>
+    }
+</table>
+
